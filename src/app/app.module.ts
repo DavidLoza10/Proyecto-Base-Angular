@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FormularioComponent } from './formulario-suma/formulario.component';
+import { FormularioRestaComponent } from './formulario-resta/formulario-resta.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormularioComponent,
+    FormularioRestaComponent
   ],
   imports: [
     BrowserModule
