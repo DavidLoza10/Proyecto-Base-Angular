@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  TOKEN: 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
+
 jobs:
   echo-test:
     name: test
@@ -13,3 +16,13 @@ jobs:
     steps:
       - name: echo
         run: git status
+
+  pull-status:
+    name: pull Request Status
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: ankitjain28may/list-files-in-pr@v1.0
+        with:
+          githubToken: ${{ env.TOKEN }}
+          outputFormat: 'json'
