@@ -5,9 +5,6 @@ on:
     branches:
       - main
 
-env:
-  TOKEN: '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'
-
 jobs:
   echo-test:
     name: test
@@ -24,5 +21,5 @@ jobs:
     steps:
       - uses: ankitjain28may/list-files-in-pr@v1.0
         with:
-          githubToken: ${{ env.TOKEN }}
+          githubToken: ${{ github.token }}
           outputFormat: 'json'
