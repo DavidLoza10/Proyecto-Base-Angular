@@ -34,5 +34,7 @@ jobs:
     name: Run bash
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Run bash
         run: ls
