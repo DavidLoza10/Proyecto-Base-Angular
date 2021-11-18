@@ -20,6 +20,11 @@ jobs:
 
     steps:
       - uses: ankitjain28may/list-files-in-pr@v1.0
+        id: list-files
         with:
           githubToken: ${{ github.token }}
-          outputFormat: 'json'
+          outputFormat: 'space-delimited'
+      - run: |
+          for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
+            echo "Changed Files - ${file}."
+          done
