@@ -28,3 +28,11 @@ jobs:
           for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
             echo "Changed Files - ${file}."
           done
+
+
+  run-bash:
+    name: Run bash
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Run bash
+      run: npm run test2
