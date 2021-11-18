@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v2
       - name: echo list
         run: |
-          for file in ${{ status.steps.list-files.outputs.pullRequestFiles }}; do
+          for file in ${{ pull-status.steps.list-files.outputs.pullRequestFiles }}; do
             echo "Changed Files - ${file}."
           done
       - name: Run bash
