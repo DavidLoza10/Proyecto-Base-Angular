@@ -26,7 +26,7 @@ jobs:
           outputFormat: 'space-delimited'
       - run: |
           for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
-            echo "${file}."
+            echo "Changed Files - ${file}."
           done
 
 
