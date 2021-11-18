@@ -37,4 +37,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run bash
-        run: ls
+        run: npm run test2
