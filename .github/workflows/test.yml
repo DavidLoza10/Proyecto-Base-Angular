@@ -24,10 +24,6 @@ jobs:
         with:
           githubToken: ${{ github.token }}
           outputFormat: 'space-delimited'
-      - run: |
-          for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
-            echo "Changed Files - ${file}."
-          done
 
 
   run-bash:
@@ -37,7 +33,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Ls
-        run: ls
+      - name: echo list
+        run: |
+          for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
+            echo "Changed Files - ${file}."
+          done
       - name: Run bash
         run: npm run test2
