@@ -27,14 +27,18 @@ jobs:
       - run: |
           for file in ${{ steps.list-files.outputs.pullRequestFiles }}; do
             echo "Changed Files - ${file}."
+            echo "file" >> "$fileWithChanges"
           done
 
 
   run-bash:
     name: Run bash
+    needs: pull-status
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Ls
+        run: ls
       - name: Run bash
         run: npm run test2
